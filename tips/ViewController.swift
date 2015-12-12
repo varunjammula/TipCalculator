@@ -14,11 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSelector: UISegmentedControl!
+    var currency = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol)!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        tipLabel.text = (currency as! String) + "0.00"
+        totalLabel.text = (currency as! String) + "0.00"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,8 +40,8 @@ class ViewController: UIViewController {
         let tipPercentage = tipPercentages[tipSelector.selectedSegmentIndex]
         let tip = billAmount * tipPercentage
         let totalAmount = billAmount + tip
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", totalAmount)
+        tipLabel.text = String(format: (currency as! String) + "%.2f", tip)
+        totalLabel.text = String(format: (currency as! String) + "%.2f", totalAmount)
         
     }
     
