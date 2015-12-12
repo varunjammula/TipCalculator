@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         let defaults = NSUserDefaults.standardUserDefaults()
         let tipIndex = defaults.integerForKey("defaultTipIndex")
         tipSelector.selectedSegmentIndex = tipIndex
+        let prevAmount = defaults.doubleForKey("previousAmount")
+        billField.text = String(format: "%.2f", prevAmount)
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +45,9 @@ class ViewController: UIViewController {
         let totalAmount = billAmount + tip
         tipLabel.text = String(format: (currency as! String) + "%.2f", tip)
         totalLabel.text = String(format: (currency as! String) + "%.2f", totalAmount)
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setDouble(billAmount, forKey: "previousAmount")
+        defaults.synchronize()
     }
     
     @IBAction func onTap(sender: AnyObject) {
