@@ -11,6 +11,8 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var defaultTip: UISegmentedControl!
+    @IBOutlet var secondView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -22,6 +24,13 @@ class SettingsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.secondView.alpha = 0
+        UIView.animateWithDuration(0.4, animations: {
+            self.secondView.alpha = 1
+        })
     }
     
     @IBAction func saveDefaultTip(sender: AnyObject) {

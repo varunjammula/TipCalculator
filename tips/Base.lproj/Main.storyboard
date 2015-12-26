@@ -53,7 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.2674146393503416" green="0.63036007531226701" blue="0.92498363874345546" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="AHy-ZM-9jN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill amount" textAlignment="right" minimumFontSize="17" id="AHy-ZM-9jN">
                                 <rect key="frame" x="156" y="92" width="144" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="sav-6e-ez5">
-                                <rect key="frame" x="20" y="317" width="280" height="29"/>
+                                <rect key="frame" x="20" y="146" width="280" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="18%"/>
@@ -90,6 +90,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="AHy-ZM-9jN" id="UaD-Sj-E93"/>
+                        <outlet property="firstView" destination="8bC-Xf-vdC" id="km1-t9-Fu3"/>
                         <outlet property="tipLabel" destination="aia-FZ-VFG" id="4fk-Ac-5ZV"/>
                         <outlet property="tipSelector" destination="sav-6e-ez5" id="dJu-5N-YZp"/>
                         <outlet property="totalLabel" destination="Gd1-zq-ip1" id="s3d-W8-fav"/>
@@ -146,6 +147,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="aAo-4T-Twl"/>
                     <connections>
                         <outlet property="defaultTip" destination="F7t-P7-YcE" id="8cB-zf-gLs"/>
+                        <outlet property="secondView" destination="y5i-YB-i41" id="vYK-kG-xDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbP-3G-vBt" userLabel="First Responder" sceneMemberID="firstResponder"/>

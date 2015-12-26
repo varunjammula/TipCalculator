@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSelector: UISegmentedControl!
+    
+    @IBOutlet var firstView: UIView!
+    
     var currency = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol)!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,15 @@ class ViewController: UIViewController {
         tipSelector.selectedSegmentIndex = tipIndex
         let prevAmount = defaults.doubleForKey("previousAmount")
         billField.text = String(format: "%.2f", prevAmount)
+        
+        self.firstView.alpha = 0
+        UIView.animateWithDuration(0.4, animations: {
+            self.firstView.alpha = 1
+        })
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        onEditingChanged(billField);
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,5 +65,6 @@ class ViewController: UIViewController {
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
 }
 
